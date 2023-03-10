@@ -1,5 +1,80 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  background-color: #f6f6ec;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.title {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4169E1;
+  transition: all 0.3s ease;
+}
+
+.wrapper:hover summary {
+  color: black;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.wrapper:hover summary img {
+  display: block;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon {
+  display: none;
+}
+
+.meme {
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+/* .meme:hover {
+  transform: scale(1.0);
+} */
+
+details {
+  border-bottom: 1px solid lightgray;
+  min-width: 45rem;
+  padding: 1rem 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+details[open] summary {
+  color: black;
+}
+
+details[open] summary img {
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+}
+
+details summary img {
+  transition: all 0.5s ease;
 }
