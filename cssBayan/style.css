@@ -4,35 +4,25 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.wrapper {
+  margin: 0 auto;
+}
+
 .title {
-  font-size: 4rem;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0;
   padding-bottom: 0.5rem;
 }
 
-.wrapper:hover label {
-  color: black;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-
-.wrapper:hover label img {
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
 .icon {
   width: 1.5rem;
   height: 1.5rem;
-  visibility: hidden;
-  opacity: 0;
   transition: all 0.5s ease;
 }
 
@@ -40,7 +30,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 55rem;
+  max-width: 55rem;
 }
 
 input[type="radio"] {
@@ -59,35 +49,136 @@ label {
   transition: transform 0.9s ease-in-out;
 }
 
-.meme-pic:hover {
-  transform: scale(1.1);
-}
-
-input:checked + label {
-  color: black;
-}
-
-input:checked + label .meme-pic,
-input:hover + label .meme-pic {
+input:checked + label .meme-pic {
   display: block;
   margin: 0 auto;
-  height: 60vh;
-  width: 80%;
+  height: 50vh;
+  width: 60%;
   object-fit: contain;
   animation: slide 0.5s ease-in-out;
-} 
+}
 
 @keyframes slide {
   0%    { opacity: 0; transform:  translateY(-0.5rem); }
   100%  { opacity: 1; transform:  translateY(0); }
 }
 
+input:checked + label .icon{
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease;
+}
+
+input:checked + label {
+  color: black;
+}
+
 input:active + label {
   filter: opacity(50%);
 }
 
-input:checked + label .icon,
-input:hover + label .icon {
-  transform: rotate(-45deg);
-  transition: transform 0.5s ease;
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  label {
+    font-size: 2rem;
+  }
+
+  .header {
+    min-width: 45rem;
+  }
+
+  .wrapper:hover label {
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  
+  .wrapper:hover label img {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .icon {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  input:hover + label .meme-pic {
+    display: block;
+    margin: 0 auto;
+    height: 50vh;
+    width: 60%;
+    object-fit: contain;
+    animation: slide 0.5s ease-in-out;
+  }
+
+  input:hover + label .icon {
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+  }
+
+  .meme-pic:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1023px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .header {
+    min-width: 40rem;
+  }
+
+  label {
+    font-size: 1.8rem;
+  }
+
+  .wrapper label img {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .header {
+    min-width: 30rem;
+  }
+  
+  label {
+    font-size: 1.1rem;
+  }
+  
+  .wrapper label img {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 1.2rem;
+  }
+    
+  .header {
+    min-width: 15rem;
+  }
+    
+  label {
+    font-size: 0.9rem;
+  }
+    
+  .wrapper label img {
+    visibility: visible;
+    opacity: 1;
+  } 
 }
