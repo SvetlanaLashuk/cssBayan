@@ -15,7 +15,7 @@ body {
 }
 
 .wrapper label {
-  color: black;
+  color: #4169E1;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -29,6 +29,8 @@ body {
 .icon {
   width: 1.5rem;
   height: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
   transition: all 0.5s ease;
 }
 
@@ -58,7 +60,6 @@ label {
 input:checked + label .meme-pic {
   display: block;
   margin: 0 auto;
-  height: 50vh;
   width: 60%;
   object-fit: contain;
   animation: slide 0.5s ease-in-out;
@@ -78,23 +79,15 @@ input:checked + label {
   color: black;
 }
 
+input:active + label p {
+  color: orangered;
+}
+
 input:active + label {
   filter: opacity(50%);
 }
 
-@media screen and (min-width: 1024px) {
-  .title {
-    font-size: 4rem;
-  }
-
-  label {
-    font-size: 2rem;
-  }
-
-  .header {
-    min-width: 45rem;
-  }
-
+@media (hover: hover) {
   .wrapper:hover label {
     color: black;
     cursor: pointer;
@@ -106,17 +99,9 @@ input:active + label {
     opacity: 1;
     transition: all 0.5s ease;
   }
-
-  .icon {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
-  }
-
   input:hover + label .meme-pic {
     display: block;
     margin: 0 auto;
-    height: 50vh;
     width: 60%;
     object-fit: contain;
     animation: slide 0.5s ease-in-out;
@@ -132,6 +117,28 @@ input:active + label {
   }
 }
 
+@media (hover: none)  {
+  .icon {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease;
+  } 
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  label {
+    font-size: 2rem;
+  }
+
+  .header {
+    min-width: 45rem;
+  }
+}
+
 @media screen and (min-width: 850px) and (max-width: 1023px) {
   .title {
     font-size: 3rem;
@@ -143,11 +150,6 @@ input:active + label {
 
   label {
     font-size: 1.8rem;
-  }
-
-  .wrapper label img {
-    visibility: visible;
-    opacity: 1;
   }
 }
 
@@ -163,28 +165,21 @@ input:active + label {
   label {
     font-size: 1.1rem;
   }
-  
-  .wrapper label img {
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 @media screen and (max-width: 500px) {
+  .wrapper {
+    padding: 0 5%;
+  }
   .title {
     font-size: 1.2rem;
   }
     
   .header {
-    min-width: 15rem;
+    min-width: 6rem;
   }
     
   label {
     font-size: 0.9rem;
   }
-    
-  .wrapper label img {
-    visibility: visible;
-    opacity: 1;
-  } 
 }
