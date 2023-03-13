@@ -1,2 +1,1 @@
-# cssBayan
-HTML CSS accordion
+https://svetlanalashuk.github.io/cssBayan/cssBayan/index.html

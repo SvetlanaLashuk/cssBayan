@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  background-color: #f6f6ec;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.wrapper label {
+  color: #4169E1;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.title {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 55rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  font-size: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #4169E1;
+}
+
+.meme-pic {
+  display: none;
+  transition: transform 0.9s ease-in-out;
+}
+
+input:checked + label .meme-pic {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  object-fit: contain;
+  animation: slide 0.5s ease-in-out;
+}
+
+@keyframes slide {
+  0%    { opacity: 0; transform:  translateY(-0.5rem); }
+  100%  { opacity: 1; transform:  translateY(0); }
+}
+
+input:checked + label .icon{
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease;
+}
+
+input:checked + label {
+  color: black;
+}
+
+input:active + label p {
+  color: orangered;
+}
+
+input:active + label {
+  filter: opacity(50%);
+}
+
+@media (hover: hover) {
+  .wrapper:hover label {
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  
+  .wrapper:hover label img {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  input:hover + label .meme-pic {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    object-fit: contain;
+    animation: slide 0.5s ease-in-out;
+  }
+
+  input:hover + label .icon {
+    transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+  }
+
+  .meme-pic:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: none)  {
+  .icon {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease;
+  } 
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  label {
+    font-size: 2rem;
+  }
+
+  .header {
+    min-width: 45rem;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1023px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .header {
+    min-width: 40rem;
+  }
+
+  label {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .header {
+    min-width: 30rem;
+  }
+  
+  label {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    padding: 0 5%;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+    
+  .header {
+    min-width: 6rem;
+  }
+    
+  label {
+    font-size: 0.9rem;
+  }
+}
